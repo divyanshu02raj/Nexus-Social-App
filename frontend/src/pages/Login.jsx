@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { setUserAndToken } from '../store';
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import api from '../services/api';
 
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
-  
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -27,29 +27,28 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', formData);
+      const response = await api.post('/auth/login', formData);
 
       dispatch(setUserAndToken({
         user: response.data.user,
         token: response.data.token
       }));
-    
+
       toast.success('Login successful!');
       navigate('/');
     } catch (error) {
       toast.error(error.response?.data?.message || 'Login failed. Please check your credentials.');
     }
-  }; 
+  };
 
   return (
     <div className={`min-h-screen flex ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
-        <div 
-          className={`absolute inset-0 bg-gradient-to-br ${
-            darkMode 
-              ? 'from-purple-900 via-indigo-800 to-blue-900' 
-              : 'from-purple-500 via-indigo-500 to-blue-500'
-          }`}
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${darkMode
+            ? 'from-purple-900 via-indigo-800 to-blue-900'
+            : 'from-purple-500 via-indigo-500 to-blue-500'
+            }`}
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +58,7 @@ function Login() {
           >
             <h1 className="text-5xl font-bold mb-6">Welcome to Nexus</h1>
             <p className="text-xl mb-8">
-              Connect with friends, share your thoughts, and discover amazing content 
+              Connect with friends, share your thoughts, and discover amazing content
               in a beautiful, modern social experience.
             </p>
             <div className="space-y-4">
@@ -91,10 +90,8 @@ function Login() {
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
-      <div className={`w-full lg:w-1/2 flex items-center justify-center p-8 ${
-        darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
-      }`}>
+      <div className={`w-full lg:w-1/2 flex items-center justify-center p-8 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+        }`}>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -119,11 +116,10 @@ function Login() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  darkMode 
-                    ? 'bg-gray-800 border-gray-700 text-white' 
-                    : 'bg-gray-50 border-gray-300 text-gray-900'
-                } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
+                className={`w-full px-4 py-3 rounded-lg border ${darkMode
+                  ? 'bg-gray-800 border-gray-700 text-white'
+                  : 'bg-gray-50 border-gray-300 text-gray-900'
+                  } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                 placeholder="Enter your email"
                 required
               />
@@ -139,11 +135,10 @@ function Login() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  darkMode 
-                    ? 'bg-gray-800 border-gray-700 text-white' 
-                    : 'bg-gray-50 border-gray-300 text-gray-900'
-                } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
+                className={`w-full px-4 py-3 rounded-lg border ${darkMode
+                  ? 'bg-gray-800 border-gray-700 text-white'
+                  : 'bg-gray-50 border-gray-300 text-gray-900'
+                  } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                 placeholder="Enter your password"
                 required
               />
@@ -169,11 +164,10 @@ function Login() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className={`w-full py-3 px-4 rounded-lg font-medium text-white ${
-                darkMode 
-                  ? 'bg-purple-600 hover:bg-purple-700' 
-                  : 'bg-purple-500 hover:bg-purple-600'
-              } focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all duration-200`}
+              className={`w-full py-3 px-4 rounded-lg font-medium text-white ${darkMode
+                ? 'bg-purple-600 hover:bg-purple-700'
+                : 'bg-purple-500 hover:bg-purple-600'
+                } focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all duration-200`}
             >
               Sign In
             </motion.button>
@@ -181,8 +175,8 @@ function Login() {
 
           <p className="text-center text-sm">
             Don&apos;t have an account?{' '}
-            <Link 
-              to="/register" 
+            <Link
+              to="/register"
               className="font-medium text-purple-600 hover:text-purple-500"
             >
               Sign up

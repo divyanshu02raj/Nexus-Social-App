@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { setUserAndToken } from '../store';
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import api from '../services/api';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -37,7 +37,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register', formData);
+      const response = await api.post('/auth/register', formData);
 
       dispatch(setUserAndToken({
         user: response.data.user,
@@ -57,8 +57,8 @@ function Register() {
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <div
           className={`absolute inset-0 bg-gradient-to-br ${darkMode
-              ? 'from-purple-900 via-indigo-800 to-blue-900'
-              : 'from-purple-500 via-indigo-500 to-blue-500'
+            ? 'from-purple-900 via-indigo-800 to-blue-900'
+            : 'from-purple-500 via-indigo-500 to-blue-500'
             }`}
         >
           <motion.div
@@ -128,8 +128,8 @@ function Register() {
                   value={formData.fullName}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Enter your full name"
                   required
@@ -147,8 +147,8 @@ function Register() {
                   value={formData.username}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Choose a username"
                   required
@@ -166,8 +166,8 @@ function Register() {
                   value={formData.email}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Enter your email"
                   required
@@ -185,8 +185,8 @@ function Register() {
                   value={formData.password}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Create a password"
                   required
@@ -204,8 +204,8 @@ function Register() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Confirm your password"
                   required
@@ -223,8 +223,8 @@ function Register() {
                   onChange={handleChange}
                   rows="3"
                   className={`w-full px-4 py-3 rounded-lg border ${darkMode
-                      ? 'bg-gray-800 border-gray-700 text-white'
-                      : 'bg-gray-50 border-gray-300 text-gray-900'
+                    ? 'bg-gray-800 border-gray-700 text-white'
+                    : 'bg-gray-50 border-gray-300 text-gray-900'
                     } focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
                   placeholder="Tell us about yourself"
                 />
@@ -236,8 +236,8 @@ function Register() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               className={`w-full py-3 px-4 rounded-lg font-medium text-white ${darkMode
-                  ? 'bg-purple-600 hover:bg-purple-700'
-                  : 'bg-purple-500 hover:bg-purple-600'
+                ? 'bg-purple-600 hover:bg-purple-700'
+                : 'bg-purple-500 hover:bg-purple-600'
                 } focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all duration-200`}
             >
               Create Account
