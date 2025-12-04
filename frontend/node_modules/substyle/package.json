@@ -1,0 +1,61 @@
+{
+  "name": "substyle",
+  "version": "9.4.1",
+  "description": "Universal styling for reusable React components",
+  "main": "lib/index.js",
+  "module": "es6/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf lib es6",
+    "prebuild": "yarn run clean",
+    "build": "yarn build:es5 && yarn build:es6",
+    "build:es5": "babel --root-mode upward src --out-dir lib --copy-files",
+    "build:es6": "BABEL_ENV=es6 babel --root-mode upward src --out-dir es6 --copy-files",
+    "copy-types": "yarn copy-types:es5 && yarn copy-types:es6",
+    "copy-types:es5": "flow-copy-source src lib",
+    "copy-types:es6": "flow-copy-source src es6",
+    "test": "jest",
+    "lint": "eslint --max-warnings 0 src",
+    "prepublishOnly": "yarn test && yarn build && yarn copy-types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfschwarz/substyle.git"
+  },
+  "keywords": [
+    "react",
+    "style",
+    "css",
+    "inline",
+    "styles",
+    "bem",
+    "className"
+  ],
+  "author": "Jan-Felix Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfschwarz/substyle/issues"
+  },
+  "homepage": "https://github.com/jfschwarz/substyle#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "invariant": "^2.2.4"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "codecov": "^3.6.5",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "eslint": "^5.14.1",
+    "flow-copy-source": "^2.0.3",
+    "jest": "24.1.0",
+    "react-test-renderer": "^16.0.0",
+    "rimraf": "^2.6.1"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>test/setup.js"
+  },
+  "gitHead": "e817dfb82c10ce1d152bb3e5f8372760953009b2"
+}
