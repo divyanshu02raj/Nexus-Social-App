@@ -169,25 +169,51 @@ To get a local copy up and running, please follow these steps.
     <td align="center" width="50%">
       <b>Home Feed</b><br>
       <i>The main feed with glassmorphic posts and stories.</i><br><br>
-      <img src="https://via.placeholder.com/400x200?text=Home+Feed" alt="Home Feed" width="90%">
+      <img src="screenshots/home-feed.png" alt="Home Feed" width="90%">
     </td>
     <td align="center" width="50%">
-      <b>Profile Page</b><br>
-      <i>User profile with posts, followers, and bio.</i><br><br>
-      <img src="https://via.placeholder.com/400x200?text=Profile+Page" alt="Profile Page" width="90%">
+      <b>Chat Interface</b><br>
+      <i>Real-time messaging with media support.</i><br><br>
+      <img src="screenshots/chat.png" alt="Chat Interface" width="90%">
     </td>
   </tr>
   
   <tr>
     <td align="center">
-      <b>Real-Time Chat</b><br>
-      <i>Instant messaging with online status and media sharing.</i><br><br>
-      <img src="https://via.placeholder.com/400x200?text=Chat+Interface" alt="Chat Interface" width="90%">
+      <b>User Profile</b><br>
+      <i>Profile page with posts, bio, and stats.</i><br><br>
+      <img src="screenshots/profile.png" alt="User Profile" width="90%">
     </td>
     <td align="center">
-      <b>Settings & Privacy</b><br>
-      <i>Manage account settings, password, and privacy controls.</i><br><br>
-      <img src="https://via.placeholder.com/400x200?text=Settings+Page" alt="Settings Page" width="90%">
+      <b>Settings Dashboard</b><br>
+      <i>Manage account, security, and privacy.</i><br><br>
+      <img src="screenshots/settings.png" alt="Settings" width="90%">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <b>Create Post</b><br>
+      <i>Rich text editor with image and location support.</i><br><br>
+      <img src="screenshots/create-post.png" alt="Create Post" width="90%">
+    </td>
+    <td align="center">
+      <b>Dark Mode</b><br>
+      <i>Sleek dark theme for low-light usage.</i><br><br>
+      <img src="screenshots/dark-mode.png" alt="Dark Mode" width="90%">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <b>Sign Up</b><br>
+      <i>Modern onboarding experience.</i><br><br>
+      <img src="screenshots/sign-up.png" alt="Sign Up" width="90%">
+    </td>
+    <td align="center">
+      <b>Login</b><br>
+      <i>Secure authentication entry point.</i><br><br>
+      <img src="screenshots/login.png" alt="Login" width="90%">
     </td>
   </tr>
 </table>
@@ -246,13 +272,11 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Contributors
 
-<a href="https://github.com/divyanshu02raj/Nexus-Social-App/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=divyanshu02raj/Nexus-Social-App" />
-</a>
-
 Made with ❤️ by:
-- **Divyanshu Raj** ([@divyanshu02raj](https://github.com/divyanshu02raj))
-- **Kalash Pratap Gaur** ([@CaSh007s](https://github.com/CaSh007s))
+- **Divyanshu Raj** ([@divyanshu02raj](https://github.com/divyanshu02raj)) | [LinkedIn](https://www.linkedin.com/in/div02raj)
+- **Kalash Pratap Gaur** ([@CaSh007s](https://github.com/CaSh007s)) | [LinkedIn](https://www.linkedin.com/in/cash007s)
+- **Priya Sah** ([@PRIYA300705](https://github.com/PRIYA300705)) | [LinkedIn](https://www.linkedin.com/in/priyasah)
+- **Krishna Sahu** ([@sahukrishna27](https://github.com/sahukrishna27)) | [LinkedIn](https://www.linkedin.com/in/krishna-sahu-3867ab241)
 
 ---
 
@@ -273,3 +297,4 @@ Divyanshu Raj
 
 * **LinkedIn:** [https://www.linkedin.com/in/div02raj](https://www.linkedin.com/in/div02raj)
 * **GitHub:** [https://github.com/divyanshu02raj](https://github.com/divyanshu02raj)
+* **Email:** [divyanshuraj2206@gmail.com](mailto:divyanshuraj2206@gmail.com)
