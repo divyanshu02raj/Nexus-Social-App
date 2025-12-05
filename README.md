@@ -56,7 +56,7 @@
 
 ## Demo
 
-* **Live Deployed Site:** [https://your-nexus-app.vercel.app/](https://your-nexus-app.vercel.app/)
+* **Live Deployed Site:** [https://nexus-social-app.vercel.app/](https://nexus-social-app.vercel.app/)
 * **GitHub Repository:** [https://github.com/divyanshu02raj/Nexus-Social-App](https://github.com/divyanshu02raj/Nexus-Social-App)
 
 ---
