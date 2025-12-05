@@ -56,7 +56,12 @@ export const createPost = asyncHandler(async (req, res) => {
 });
 
 export const getPosts = asyncHandler(async (req, res) => {
-  const posts = await populatePost(Post.find({})).sort({ createdAt: -1 });
+  const user = await User.findById(req.user.id);
+  const following = user.following;
+
+  const feedUsers = [...following, req.user.id];
+
+  const posts = await populatePost(Post.find({ user: { $in: feedUsers } })).sort({ createdAt: -1 });
   res.json(posts);
 });
 
